@@ -33,6 +33,7 @@ func main() {
 	}
 	proxy := http_proxy.NewHTTPProxy(newConfig(usernameConfig, passwordConfig))
 
+	fmt.Printf("http proxy server start at %s\n", serverHost)
 	if err := http.ListenAndServe(serverHost, proxy); err != nil {
 		log.Fatalln(err)
 	}
